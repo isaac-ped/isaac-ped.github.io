@@ -3,8 +3,9 @@ var PAGE_PER_I = 600;
 var boxes = {
     1: '#content_projects',
     2: '#content_pubs',
-    3: '#content_contact',
-    4: '#content_links',
+    3: '#content_resu',
+    4: '#content_cont',
+    5: '#content_git',
 };
 
 var scroll_to = function(box_i) {
@@ -30,8 +31,9 @@ var onscroll = function (e) {
     //set_box_pos(0, $( "#content_about" ), e.pageY);
     set_box_pos(1, $( "#content_projects" ), y);
     set_box_pos(2, $( "#content_pubs" ), y);
-    set_box_pos(3, $( "#content_contact" ), y);
-    set_box_pos(4, $( "#content_links" ), y);
+    set_box_pos(3, $( "#content_resu" ), y);
+    set_box_pos(4, $( "#content_cont" ), y);
+    set_box_pos(5, $( "#content_git" ), y);
 } 
 
 $('html').on('mousewheel', onscroll)

@@ -97,15 +97,6 @@ div.nav {
 }
 
 .content_box p {
-    font-size: 15;
-}
-
-.content_title {
-    padding-left: 20px;
-    padding-top: 5px;
-}
-
-h2 {
     font-family: 'Quicksand', sans-serif;
-    font-weight: bold;
+    font-size: 15;
 }
