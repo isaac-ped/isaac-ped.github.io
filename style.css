@@ -162,14 +162,15 @@ h2 {
     position: relative;
     display:inline-block;
     vertical-align:top;
-    width: 50vw;
+    width: 35vw;
     border-width: 1px;
     margin-top:-20px;
-    max-width: 300px;
+    max-width: 280px;
 }
 
 #about_more_text {
     width: auto;
+    max-width: 290px;
 }
 
 .proj_icon {
