@@ -1,13 +1,5 @@
 var PAGE_PER_I = 1000;
 
-<<<<<<< HEAD
-var boxes = {
-    1: '#content_projects',
-    2: '#content_pubs',
-    3: '#content_resu',
-    4: '#content_cont',
-    5: '#content_git',
-=======
 var boxes = [
     '#content_about',
     '#content_projects',
@@ -32,7 +24,6 @@ var projects = [
 
 var box_links = {
     'content_projects':  projects
->>>>>>> gh-pages
 };
 
 var project_icons = {
@@ -126,22 +117,8 @@ var active_pos = function() {
     }
 }
 
-var onscroll = function (e) {  
-// called when the window is scrolled.  
-<<<<<<< HEAD
-    var y = window.pageYOffset;
-    console.log(e);
-    $( "#counter").html(y);
-
-    set_box_pos(0, $( "#content_about"), 10000);
-    //set_box_pos(0, $( "#content_about" ), e.pageY);
-    set_box_pos(1, $( "#content_projects" ), y);
-    set_box_pos(2, $( "#content_pubs" ), y);
-    set_box_pos(3, $( "#content_resu" ), y);
-    set_box_pos(4, $( "#content_cont" ), y);
-    set_box_pos(5, $( "#content_git" ), y);
-=======
-
+var onscroll = function (e) {
+// called when the window is scrolled.
     for (var i=0; i <= boxes.length; i++) {
         set_box_pos(i, $(boxes[i]));
     }
@@ -157,8 +134,7 @@ var onscroll = function (e) {
         }
 
     }
->>>>>>> gh-pages
-} 
+}
 
 $('html').on('mousewheel', onscroll)
 $('html').on('DOMMouseScroll', onscroll)

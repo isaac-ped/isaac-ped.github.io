@@ -146,8 +146,6 @@ a:visited {
 .content_box p {
     font-family: 'Quicksand', sans-serif;
     font-size: 15;
-<<<<<<< HEAD
-=======
 }
 
 .content_inner {
@@ -244,5 +242,4 @@ a:visited {
     width: 80vw;
     max-width: 600px;
     left: 10vh;
->>>>>>> gh-pages
 }
