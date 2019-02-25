@@ -181,16 +181,16 @@ h2 {
 }
 
 .proj_icon_box {
+    position: relative;
     white-space: nowrap;
-    width: 18vw;
-    height: 18vw;
-    max-width: 10vh;
-    max-height: 10vh;
-    border-style:solid;
+    width: 8vh;
+    height: 8vh;
+    border-style:dotted;
     border-width: 1px;
-    margin-bottom: 2px;
+    padding:1px;
     display: inline-block;
     vertical-align:middle;
+    margin-right: 10px;
 
 }
 
@@ -199,13 +199,28 @@ h2 {
     display: inline-block;
     vertical-align: middle;
 }
+.proj_icon_container {
+    height: 8vh;
+    width: 80vw;
+    margin-top: 10px;
+}
+
+.proj_icon_text {
+    position: relative;
+    width: calc(80vw - 10vh);
+    left: 10vh;
+    top: -6vh;
+}
+.proj_icon_text p {
+    font-size: 12px;
+}
 
 #proj_sidebar {
-    width: 18vw;
+    width: 9vh;
     max-width: 100px;
 }
 
 .project_contents{
-    width: calc(100vw - 100px);
-    left: 110px;
+    width: 80vw;
+    left: 10vh;
 }

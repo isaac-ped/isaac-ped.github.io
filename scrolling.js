@@ -1,19 +1,29 @@
 var PAGE_PER_I = 1000;
 
-var boxes = {
-    1: '#content_projects',
-    2: '#content_set',
-    3: '#content_hopfield',
-    4: '#content_memo',
-    5: '#content_pubs',
-    6: '#content_links',
-};
+var boxes = [
+    '#content_about',
+    '#content_projects',
+    '#content_set',
+    '#content_hopfield',
+    '#content_memo',
+    '#content_pubs',
+    '#content_links',
+];
+
+var projects_start = boxes.indexOf('#content_projects');
+var projects_end = boxes.indexOf('#content_pubs');
 
 var projects = [
     'content_set',
     'content_hopfield',
     'content_memo'
 ];
+
+var project_icons = {
+    'content_set': 'set_icon_box',
+    'content_hopfield': 'hop_icon_box',
+    'content_memo': 'memo_icon_box'
+};
 
 var hamburger_on = false;
 
@@ -34,7 +44,8 @@ var scroll_to = function(box_i, noclose) {
     $('body').scrollTo((box_i) * PAGE_PER_I - 200, {duration: 1000});
 }
 
-var set_box_pos = function(box_i, box, page_y) {
+var set_box_pos = function(box_i, box) {
+    var page_y = window.pageYOffset;
     var min_box_pos = box_i * PAGE_PER_I - 1000;
 
     if (projects.indexOf(box.attr('id'))>= 0) {
@@ -42,20 +53,39 @@ var set_box_pos = function(box_i, box, page_y) {
     } else {
         var x = 2000  - 1955  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
     }
-    console.log(box.attr('id'), "x", x);
     box.css("margin-top", x + "px");
     return x;
 }
 
+var active_pos = function() {
+    var page_y = window.pageYOffset
+
+    for (var i=boxes.length - 1; i >= 0; i--) { 
+        var min_box_pos = i * PAGE_PER_I - 1000;
+        if (( 1 + Math.exp( - .01 * (page_y - min_box_pos))) < 1.01) {
+            console.log(boxes[i], 'is active');
+            return i;
+        }
+    }
+}
+
 var onscroll = function (e) {  
 // called when the window is scrolled.  
-    var y = window.pageYOffset;
-    console.log(e);
-    $( "#counter").html(y);
 
-    set_box_pos(0, $( "#content_about"), 10000);
     for (var i=0; i <= 6; i++) {
-        set_box_pos(i, $(boxes[i]), y);
+        set_box_pos(i, $(boxes[i]));
+    }
+
+    var active_i = active_pos();
+    for (var i=projects_start+1; i < projects_end; i++) {
+        var project_i = i - projects_start - 1;
+        var project_box = project_icons[projects[project_i]]
+        if (active_i == i) {
+            $("#"+project_box).css("border-right-style", "none");
+        } else {
+            $("#"+project_box).css("border-right-style", "dotted");
+        }
+
     }
 } 
 

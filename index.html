@@ -57,26 +57,49 @@
 </div>
 
 <div class="content_box" id="content_projects">
-    <h2> Personal Projects </h2>
+    <h2 onclick="scroll_to(1)"> Personal Projects </h2>
     <div id="proj_sidebar">
-        <div class="proj_icon_box" onclick="scroll_to(2)">
+        <div class="proj_icon_container">
+        <div class="proj_icon_box" onclick="scroll_to(2)" id="set_icon_box">
             <span class="proj_icon_helper"> </span>
             <img src="53t.png" class="proj_icon" id="set_icon" />
         </div>
-        <div class="proj_icon_box" onclick="scroll_to(3)">
+        <div class="proj_icon_text">
+            <p style="display:inline">53T: A clone of one of my favorite games</p>
+        </div>
+        </div>
+
+        <div class="proj_icon_container">
+        <div class="proj_icon_box" onclick="scroll_to(3)" id="hop_icon_box">
             <span class="proj_icon_helper"> </span>
             <img src="hopfield.png" class="proj_icon" id="hop_icon" />
         </div>
-        <div class="proj_icon_box" onclick="scroll_to(4)">
+        <div class="proj_icon_text">
+            <p style="display:inline">Hopfield Network Simulation</p>
+        </div>
+        </div>
+
+        <div class="proj_icon_container">
+        <div class="proj_icon_box" onclick="scroll_to(4)" id="memo_icon_box">
             <span class="proj_icon_helper"> </span>
             <img src="memoize.png" class="proj_icon" id="mem_icon" />
         </div>
+        <div class="proj_icon_text">
+            <p style="display:inline">Permanent Memoization Decorators</p>
+        </div>
+        </div>
+
+
     </div>
 </div>
 
-<div class="content_box project_contents" id="content_set"
-    onclick="scroll_to(3)">
+<div class="content_box project_contents" id="content_set">
     <h3> 53t </h3>
+    <p> One of my favorite card games, written in python, to
+    be played in a terminal. Single- or multi-player.
+    <p> Partially an experiment with substitution of various views
+    (web, text), and controllers (local, remote).
+    <p>
 </div>
 
 <div class="content_box project_contents" id="content_hopfield">
