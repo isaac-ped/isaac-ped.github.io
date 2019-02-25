@@ -24,14 +24,16 @@
     <div class="nav"  id="button_group">
         <div class="nav button" id="nav_about" onclick="scroll_to(0)"> About </div>
         <div class="nav button" id="nav_proj" onclick="scroll_to(1)"> Projects </div>
-        <div class="nav button" id="nav_pub" onclick="scroll_to(5)"> Publications </div>
-        <div class="nav button" id="nav_links" onclick="scroll_to(6)"> Links </div>
+        <div class="nav button" id="nav_pub" onclick="scroll_to(2)"> Publications </div>
+        <div class="nav button" id="nav_links" onclick="scroll_to(3)"> Links </div>
         <div class="nav button" id="nav_resume"> Resume </div>
     </div>
 </div>
 
 <div class="content_box" id="content_about">
-    <h2> About Me </h2>
+    <div class="content_title">
+        <h2> About Me </h2>
+    </div>
     <div class="content_inner">
         <div id="spaceship_holder">
         <img id="spaceship"  src="spaceship.jpg" />
@@ -59,10 +61,12 @@
 </div>
 
 <div class="content_box" id="content_projects">
-    <h2 onclick="scroll_to(1)"> Personal Projects </h2>
+    <div class="content_title">
+        <h2 onclick="unshow_other_proj('')"> Personal Projects </h2>
+    </div>
     <div id="proj_sidebar">
         <div class="proj_icon_container">
-        <div class="proj_icon_box" onclick="scroll_to(2)" id="set_icon_box">
+        <div class="proj_icon_box" onclick="show_proj('content_set')" id="set_icon_box">
             <span class="proj_icon_helper"> </span>
             <img src="53t.png" class="proj_icon" id="set_icon" />
         </div>
@@ -72,7 +76,7 @@
         </div>
 
         <div class="proj_icon_container">
-        <div class="proj_icon_box" onclick="scroll_to(3)" id="hop_icon_box">
+        <div class="proj_icon_box" onclick="show_proj('content_hopfield')" id="hop_icon_box">
             <span class="proj_icon_helper"> </span>
             <img src="hopfield.png" class="proj_icon" id="hop_icon" />
         </div>
@@ -82,7 +86,7 @@
         </div>
 
         <div class="proj_icon_container">
-        <div class="proj_icon_box" onclick="scroll_to(4)" id="memo_icon_box">
+        <div class="proj_icon_box" onclick="show_proj('content_memo')" id="memo_icon_box">
             <span class="proj_icon_helper"> </span>
             <img src="memoize.png" class="proj_icon" id="mem_icon" />
         </div>
@@ -91,12 +95,23 @@
         </div>
         </div>
 
+        <div class="proj_icon_container">
+        <div class="proj_icon_box" onclick="show_proj('content_art')" id="art_icon_box">
+            <span class="proj_icon_helper"> </span>
+            <img src="puck_small.png" class="proj_icon" id="art_icon" />
+        </div>
+        <div class="proj_icon_text">
+            <p style="display:inline">Art/Other</p>
+        </div>
+        </div>
+
+
 
     </div>
 </div>
 
 <div class="content_box project_contents" id="content_set">
-    <h3> 53t </h3>
+    <h3> <a href="https://github.com/isaac-ped/53T"> 53T </a></h3>
     <p> One of my favorite card games, written in python, to
     be played in a terminal. Single- or multi-player.
     <p> Partially an experiment with substitution of various views
@@ -105,21 +120,38 @@
 </div>
 
 <div class="content_box project_contents" id="content_hopfield">
-    <h3> Hopfield </h3>
+    <h3> <a href="https://github.com/isaac-ped/hopfield_sim"> Hopfield Network Visualization </a></h3>
+    <p> Train a hopfield network on a series of images, randomize
+    it, let it run, and watch as it transitions into a
+    learned state.
 </div>
 
 
 <div class="content_box project_contents" id="content_memo">
-    <h3> Memoizer </h3>
+    <h3> <a href="https://github.com/isaac-ped/Memoizer"> Memoizer </a></h3>
+    <p> Decorate a python function with <font class="code">@memoize_to_file</font>,
+    and it will automatically store function return values and standard output,
+    and recall them (rather than recomputing) on the next invocation.
+
 </div>
+
+<div class="content_box project_contents" id="content_art">
+    <h3> Art </h3>
+
+</div>
+
 
 
 <div class="content_box" id="content_pubs">
-    <h2> Publications </h2>
+    <div class="content_title">
+        <h2> Publications </h2>
+    </div>
 </div>
 
 <div class="content_box" id="content_links">
-    <h2> Clickable Text </h2>
+    <div class="content_title">
+        <h2> Clickable Text </h2>
+    </div>
 </div>
 
 <script src="scrolling.js" ></script>

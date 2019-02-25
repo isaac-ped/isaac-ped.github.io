@@ -3,9 +3,10 @@ var PAGE_PER_I = 1000;
 var boxes = [
     '#content_about',
     '#content_projects',
-    '#content_set',
-    '#content_hopfield',
-    '#content_memo',
+    //'#content_set',
+    //'#content_hopfield',
+    //'#content_memo',
+    //'#content_art',
     '#content_pubs',
     '#content_links',
 ];
@@ -13,16 +14,23 @@ var boxes = [
 var projects_start = boxes.indexOf('#content_projects');
 var projects_end = boxes.indexOf('#content_pubs');
 
+
 var projects = [
     'content_set',
     'content_hopfield',
-    'content_memo'
+    'content_memo',
+    'content_art'
 ];
+
+var box_links = {
+    'content_projects':  projects
+};
 
 var project_icons = {
     'content_set': 'set_icon_box',
     'content_hopfield': 'hop_icon_box',
-    'content_memo': 'memo_icon_box'
+    'content_memo': 'memo_icon_box',
+    'content_art': 'art_icon_box'
 };
 
 var permanent_sidebar = function() {
@@ -46,24 +54,54 @@ var set_hamburger = function(on) {
 
 set_hamburger(permanent_sidebar());
 
+var unshow_other_proj = function(proj_name) {
+    for (var i=0; i < projects.length; i++)  {
+        if (projects[i] != proj_name) {
+            $('#'+projects[i]).fadeOut(200);
+            $('#' + project_icons[projects[i]]).css('border-right-style', 'dotted');
+            $('#'+projects[i]).css('z-index', 1);
+        }
+    }
+}
+
+var show_proj = function(proj_name) {
+    for (var i=0; i < projects.length; i++)  {
+        if (projects[i] == proj_name) {
+            $('#'+projects[i]).css('z-index', 1.1);
+            $('#'+projects[i]).fadeIn(200, function() { unshow_other_proj(proj_name);});
+            $('#' + project_icons[projects[i]]).css('border-right-style', 'none');
+        } else {
+            $('#'+projects[i]).css('z-index', 1);
+        }
+    }
+}
+unshow_other_proj('');
+
 
 var scroll_to = function(box_i, noclose) {
     if (!noclose && hamburger_on && !permanent_sidebar()) {
         toggle_hamburger();
     }
-    $('body').scrollTo((box_i) * PAGE_PER_I - 200, {duration: 1000});
+    var diff = Math.abs(active_pos() - box_i);
+    $('body').scrollTo((box_i) * PAGE_PER_I - 200, {duration: 600 * Math.sqrt(diff)});
 }
 
 var set_box_pos = function(box_i, box) {
     var page_y = window.pageYOffset;
     var min_box_pos = box_i * PAGE_PER_I - 1000;
 
-    if (projects.indexOf(box.attr('id'))>= 0) {
-        var x = 2000  - 1885  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
-    } else {
-        var x = 2000  - 1955  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
+    var box_id = box.attr('id');
+    if (box_id in box_links) {
+        links = box_links[box_id];
+        for (var i=0; i < links.length; i++) {
+            var x = 2000  - 1885  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
+            $('#' + links[i]).css('margin-top', x + 'px');
+        }
     }
+    var x = 2000  - 1955  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
+
     box.css("margin-top", x + "px");
+    box.css("z-index", box_i);
     return x;
 }
 
@@ -82,7 +120,7 @@ var active_pos = function() {
 var onscroll = function (e) {  
 // called when the window is scrolled.  
 
-    for (var i=0; i <= 6; i++) {
+    for (var i=0; i <= boxes.length; i++) {
         set_box_pos(i, $(boxes[i]));
     }
 

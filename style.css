@@ -1,5 +1,5 @@
 body {
-    height: 10000px;
+    height: 5000px;
 }
 
 div.nav {
@@ -49,6 +49,10 @@ div.nav {
     width: 20em;
 }
 
+.content_title {
+    padding-left: 20px;
+}
+
 h3 {
     font-family: 'Quicksand', sans-serif;
 }
@@ -69,6 +73,15 @@ h2 {
     vertical-align: middle;
     font-family: 'Quicksand', sans-serif;
     width:8em;
+    font-weight: unset;
+}
+
+a:visited {
+    color: #223;
+}
+
+.code {
+    font-family:monospace;
 }
 
 #top_background {
