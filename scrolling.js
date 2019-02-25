@@ -24,7 +24,7 @@ var scroll_to = function(box_i, noclose) {
     if (!noclose && hamburger_on) {
         toggle_hamburger();
     }
-    $('body').scrollTo((box_i+1.2) * PAGE_PER_I + 10, {duration: 1000});
+    $('body').scrollTo((box_i+1.2) * PAGE_PER_I + 55, {duration: 1000});
 }
 
 var set_box_pos = function(box_i, box, page_y) {
