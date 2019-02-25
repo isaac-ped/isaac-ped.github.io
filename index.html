@@ -22,8 +22,8 @@
     <div class="nav"  id="button_group">
         <div class="nav button" id="nav_about" onclick="scroll_to(0)"> About </div>
         <div class="nav button" id="nav_proj" onclick="scroll_to(1)"> Projects </div>
-        <div class="nav button" id="nav_pub" onclick="scroll_to(2)"> Publications </div>
-        <div class="nav button" id="nav_links" onclick="scroll_to(3)"> Links </div>
+        <div class="nav button" id="nav_pub" onclick="scroll_to(5)"> Publications </div>
+        <div class="nav button" id="nav_links" onclick="scroll_to(6)"> Links </div>
         <div class="nav button" id="nav_resume"> Resume </div>
     </div>
 </div>
@@ -34,27 +34,67 @@
         <div id="spaceship_holder">
         <img id="spaceship"  src="spaceship.jpg" />
         </div>
-        <div id="text_holder"> 
-            <p> I am a person who desperately needs to create a blurb about himself,
-            but doesn't know what to write. <br/><br/>
+        <div class="about_text_holder">
+            <p> I am currently an employee and master's student at Penn's
+            <a href="seas.upenn.edu/~netdb">netdb</a> and
+            <a href="seas.upenn.edu/~DSL">Distributed Systems</a>
+            labs. </p>
 
-            I am interested in things and stuff and computers and building things and other
-            stuff.<br/><br/>
+            <p> I love building things! Recently, I've
+            been focused on speeding up networked systems.
             </p>
+        </div>
+        <div class="about_text_holder" id="about_more_text">
+            <p> Past, future, and personal interests include
+            neuroscience, data visualization, and 3D art.
+
+            <p> I am always on the lookout for smart people
+            to work on fun projects with, so please
+            <a href="mailto:isaac.pedisich@gmail.com">reach out</a>
+            if you have interest in collaborating!
         </div>
     </div>
 </div>
 
 <div class="content_box" id="content_projects">
-    <p> This is the second content box </p>
+    <h2> Personal Projects </h2>
+    <div id="proj_sidebar">
+        <div class="proj_icon_box" onclick="scroll_to(2)">
+            <span class="proj_icon_helper"> </span>
+            <img src="53t.png" class="proj_icon" id="set_icon" />
+        </div>
+        <div class="proj_icon_box" onclick="scroll_to(3)">
+            <span class="proj_icon_helper"> </span>
+            <img src="hopfield.png" class="proj_icon" id="hop_icon" />
+        </div>
+        <div class="proj_icon_box" onclick="scroll_to(4)">
+            <span class="proj_icon_helper"> </span>
+            <img src="memoize.png" class="proj_icon" id="mem_icon" />
+        </div>
+    </div>
 </div>
 
+<div class="content_box project_contents" id="content_set"
+    onclick="scroll_to(3)">
+    <h3> 53t </h3>
+</div>
+
+<div class="content_box project_contents" id="content_hopfield">
+    <h3> Hopfield </h3>
+</div>
+
+
+<div class="content_box project_contents" id="content_memo">
+    <h3> Memoizer </h3>
+</div>
+
+
 <div class="content_box" id="content_pubs">
-    <p> This is the third content box </p>
+    <h2> Publications </h2>
 </div>
 
 <div class="content_box" id="content_links">
-    <p> This is the fourth content box </p>
+    <h2> Clickable Text </h2>
 </div>
 
 <script src="scrolling.js" ></script>

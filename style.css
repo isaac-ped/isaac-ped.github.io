@@ -1,5 +1,5 @@
 body {
-    height: 5000px;
+    height: 10000px;
 }
 
 div.nav {
@@ -43,6 +43,10 @@ div.nav {
     height: 50px;
     width: 100vw;
     display: table;
+}
+
+h3 {
+    font-family: 'Quicksand', sans-serif;
 }
 
 h2 {
@@ -127,29 +131,79 @@ h2 {
 }
 
 .content_inner {
+    max-width: 770px;
     margin-left: 20px;
     height: 500px;
 }
 
 #spaceship_holder {
     position: relative;
+    display:inline-block;
     left: 0px;
     max-width: 40vw;
-    height: 60vh;
+    max-height: 50vh;
     float: left;
+    margin-bottom:10px;
 }
 
 #spaceship {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 95%;
+    max-height: 50vh;
+    height: auto;
+    width: auto;
 }
 
-#text_holder {
+#about_spacer{
+    display: inline-block;
+    width: 10px;
+}
+
+.about_text_holder {
     position: relative;
-    float:left;
-    left: 30px;
-    width: 40vw;
-    padding-left: 10px;
+    display:inline-block;
+    vertical-align:top;
+    width: 50vw;
     border-width: 1px;
-    height: 250px;
+    margin-top:-20px;
+    max-width: 300px;
+}
+
+#about_more_text {
+    width: auto;
+}
+
+.proj_icon {
+    left:-4px;
+    width: 90%;
+    vertical-align: middle;
+}
+
+.proj_icon_box {
+    white-space: nowrap;
+    width: 18vw;
+    height: 18vw;
+    max-width: 100px;
+    max-height: 100px;
+    border-style:solid;
+    border-width: 1px;
+    margin-bottom: 2px;
+    display: inline-block;
+    vertical-align:middle;
+
+}
+
+.proj_icon_helper {
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#proj_sidebar {
+    width: 18vw;
+    max-width: 100px;
+}
+
+.project_contents{
+    width: calc(100vw - 100px);
+    left: 110px;
 }
