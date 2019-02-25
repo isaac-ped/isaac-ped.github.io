@@ -1,1 +1,1 @@
-# [Isaac.MP](isaac-ped.github.io/isaac.mp)
+# [Isaac.MP](http://isaac-ped.github.io/isaac.mp)
