@@ -45,6 +45,10 @@ div.nav {
     display: table;
 }
 
+#name_holder {
+    width: 20em;
+}
+
 h3 {
     font-family: 'Quicksand', sans-serif;
 }
@@ -64,6 +68,7 @@ h2 {
     padding-top: 0px;
     vertical-align: middle;
     font-family: 'Quicksand', sans-serif;
+    width:8em;
 }
 
 #top_background {
@@ -222,5 +227,6 @@ h2 {
 
 .project_contents{
     width: 80vw;
+    max-width: 600px;
     left: 10vh;
 }

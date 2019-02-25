@@ -25,10 +25,17 @@ var project_icons = {
     'content_memo': 'memo_icon_box'
 };
 
-var hamburger_on = false;
+var permanent_sidebar = function() {
+    return screen.width > 800;
+}
 
 var toggle_hamburger = function() {
-    if (hamburger_on) {
+    set_hamburger(!hamburger_on);
+}
+
+var set_hamburger = function(on) {
+    console.log('setting habbagah', on);
+    if (!on) {
         $('#nav_box').animate({'right': "-10em"});
         hamburger_on = false;
     } else {
@@ -37,8 +44,11 @@ var toggle_hamburger = function() {
     }
 }
 
+set_hamburger(permanent_sidebar());
+
+
 var scroll_to = function(box_i, noclose) {
-    if (!noclose && hamburger_on) {
+    if (!noclose && hamburger_on && !permanent_sidebar()) {
         toggle_hamburger();
     }
     $('body').scrollTo((box_i) * PAGE_PER_I - 200, {duration: 1000});
@@ -94,3 +104,4 @@ $('html').on('DOMMouseScroll', onscroll)
 window.onscroll = onscroll;
 
 onscroll();
+set_hamburger(hamburger_on);
