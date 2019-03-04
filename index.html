@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" >
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+<!-- <script src="js/jquery-1.11.3.js"></script> -->
 <script src="jquery.scrollTo.js"></script>
 
  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Quicksand" rel="stylesheet">
@@ -62,23 +63,13 @@
     </div>
     <div id="proj_sidebar">
         <div class="proj_icon_container">
-        <div class="proj_icon_box" onclick="show_proj('content_set')" id="set_icon_box">
-            <span class="proj_icon_helper"> </span>
-            <img src="53t.png" class="proj_icon" id="set_icon" />
-        </div>
-        <div class="proj_icon_text">
-            <p style="display:inline">53T: A clone of one of my favorite games</p>
-        </div>
-        </div>
-
-        <div class="proj_icon_container">
-        <div class="proj_icon_box" onclick="show_proj('content_hopfield')" id="hop_icon_box">
-            <span class="proj_icon_helper"> </span>
-            <img src="hopfield.png" class="proj_icon" id="hop_icon" />
-        </div>
-        <div class="proj_icon_text">
-            <p style="display:inline">Hopfield Network Simulation</p>
-        </div>
+            <div class="proj_icon_box" onclick="show_proj('content_shre')" id="shre_icon_box">
+                <span class="proj_icon_helper"> </span>
+                <img src="shremote.png" class="proj_icon" id="shre_icon" />
+            </div>
+            <div class="proj_icon_text">
+                <p style="display:inline">Shremote: Run experiments over SSH</p>
+            </div>
         </div>
 
         <div class="proj_icon_container">
@@ -90,6 +81,36 @@
             <p style="display:inline">Permanent Memoization Decorators</p>
         </div>
         </div>
+        <div class="proj_icon_container">
+        <div class="proj_icon_box" onclick="show_proj('content_hopfield')" id="hop_icon_box">
+            <span class="proj_icon_helper"> </span>
+            <img src="hopfield.png" class="proj_icon" id="hop_icon" />
+        </div>
+        <div class="proj_icon_text">
+            <p style="display:inline">Hopfield Network Simulation</p>
+        </div>
+        </div>
+
+        <div class="proj_icon_container">
+        <div class="proj_icon_box" onclick="show_proj('content_bagel')" id="bagel_icon_box">
+            <span class="proj_icon_helper"> </span>
+            <img src="bagel.png" class="proj_icon" id="bagel_icon" />
+        </div>
+        <div class="proj_icon_text">
+            <p style="display:inline">Bagel: A word game for fun and profit!</p>
+        </div>
+        </div>
+
+        <div class="proj_icon_container">
+        <div class="proj_icon_box" onclick="show_proj('content_set')" id="set_icon_box">
+            <span class="proj_icon_helper"> </span>
+            <img src="53t.png" class="proj_icon" id="set_icon" />
+        </div>
+        <div class="proj_icon_text">
+            <p style="display:inline">53T: A clone of one of my favorite games</p>
+        </div>
+        </div>
+
 
         <div class="proj_icon_container">
         <div class="proj_icon_box" onclick="show_proj('content_art')" id="art_icon_box">
@@ -101,6 +122,14 @@
         </div>
         </div>
     </div>
+</div>
+
+<div class="content_box project_contents" id="content_shre">
+    <h3> <a href="https://github.com/isaac-ped/Shremote"> Shremote </a></h3>
+    <p> A tool for executing timed experiments over SSH.
+    <p>Shremote uses an extensible configuration file format
+    to turn running experiments, making logs, and gathering
+    data into a seamless and easy process.
 </div>
 
 <div class="content_box project_contents" id="content_set">
@@ -119,6 +148,12 @@
     learned state.
 </div>
 
+<div class="content_box project_contents" id="content_bagel">
+    <h3> <a href="https://github.com/isaac-ped/play-bagel"> Bagel </a></h3>
+    <p> Bagel is a two player word-guessing game </p>
+    <p> The game can either be played locally against an AI (python)
+    or against other players online (node.js, not currently hosted anywhere)
+</div>
 
 <div class="content_box project_contents" id="content_memo">
     <h3> <a href="https://github.com/isaac-ped/Memoizer"> Memoizer </a></h3>

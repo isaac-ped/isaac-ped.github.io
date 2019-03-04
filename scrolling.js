@@ -16,8 +16,10 @@ var projects_end = boxes.indexOf('#content_pubs');
 
 
 var projects = [
+    'content_shre',
     'content_set',
     'content_hopfield',
+    'content_bagel',
     'content_memo',
     'content_art'
 ];
@@ -27,7 +29,9 @@ var box_links = {
 };
 
 var project_icons = {
+    'content_shre': 'shre_icon_box',
     'content_set': 'set_icon_box',
+    'content_bagel': 'bagel_icon_box',
     'content_hopfield': 'hop_icon_box',
     'content_memo': 'memo_icon_box',
     'content_art': 'art_icon_box'
@@ -91,16 +95,15 @@ var set_box_pos = function(box_i, box) {
     var min_box_pos = box_i * PAGE_PER_I - 1000;
 
     var box_id = box.attr('id');
+    var x = 200 - 200  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
     if (box_id in box_links) {
         links = box_links[box_id];
         for (var i=0; i < links.length; i++) {
-            var x = 2000  - 1885  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
-            $('#' + links[i]).css('margin-top', x + 'px');
+            $(`#${links[i]}`).css('margin-top', `calc(115px + ${x}vh)`)
         }
     }
-    var x = 2000  - 1955  / ( 1 + Math.exp( - .01 * (page_y - min_box_pos)));
 
-    box.css("margin-top", x + "px");
+    box.css("top", `calc(50px + ${x}vh)`)
     box.css("z-index", box_i);
     return x;
 }
