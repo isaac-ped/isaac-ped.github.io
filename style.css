@@ -1,5 +1,5 @@
 body {
-   height:700vh;
+   height:300vh;
 }
 
 div.nav {
@@ -25,7 +25,7 @@ div.nav {
     padding-left: 20px;
     padding-right: 20px;
     position: absolute;
-    bottom: 5px;
+    bottom: 8px;
     width: 160px;
 }
 #nav_box {
@@ -58,6 +58,8 @@ h3 {
 }
 
 h2 {
+    font-variant: small-caps;
+    letter-spacing: 3px;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -68,6 +70,7 @@ h2 {
     font-family: 'Quicksand', sans-serif;
 }
 .nav h1 {
+    letter-spacing: 3px;
     display: table-cell; 
     padding-top: 0px;
     vertical-align: middle;
@@ -143,8 +146,19 @@ a:visited {
     background: white;
 }
 
+#content_projects {
+    background:#222222;
+}
+#content_projects p {
+    color: white;
+}
+#content_projects h2 {
+    font-variant:small-caps;
+    color:white;
+}
+
 .content_box p {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Noto Serif', sans-serif;
     font-size: 15;
 }
 
@@ -156,6 +170,12 @@ a:visited {
 }
 
 #spaceship_holder {
+    max-width: 60vw;
+    max-height: 25vh;
+    margin-right: 10px;
+}
+
+#about_holder {
     position: relative;
     left: 0px;
     max-width: 45vw;
@@ -206,6 +226,7 @@ a:visited {
     height: 8vh;
     border-style:dotted;
     border-width: 1px;
+    border-color:white;
     padding:1px;
     display: inline-block;
     vertical-align:middle;
@@ -222,6 +243,7 @@ a:visited {
     height: 8vh;
     width: 80vw;
     margin-top: 10px;
+    
 }
 
 .proj_icon_text {
@@ -240,7 +262,23 @@ a:visited {
 }
 
 .project_contents{
+    background:#222222;
     width: 80vw;
     max-width: 600px;
     left: 10vh;
+    border-top-style: solid;
+    border-top-color:gray;
+    border-top-width: 2px;
+}
+
+.project_contents h3{
+    color: white;
+}
+
+.project_contents p{
+    color: white;
+}
+
+.project_contents a{
+    color: white;
 }

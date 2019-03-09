@@ -6,7 +6,7 @@
 <!-- <script src="js/jquery-1.11.3.js"></script> -->
 <script src="jquery.scrollTo.js"></script>
 
- <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Quicksand" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Quicksand|Noto+Serif" rel="stylesheet">
  <link rel = "stylesheet"
    type = "text/css"
    href = "style.css" />
@@ -17,7 +17,7 @@
 
 <div class="nav" id="nav_name">
     <div id="name_holder">
-    <h1 onclick="scroll_to(0)">Isaac Pedisich</h1>
+    <h1 onclick="scroll_to(0)">isaac pedisich</h1>
     </div>
 </div>
 <div class="nav" id="nav_box">
@@ -26,18 +26,19 @@
         <div class="nav button" id="nav_about" onclick="scroll_to(0)"> About </div>
         <div class="nav button" id="nav_proj" onclick="scroll_to(1)"> Projects </div>
         <div class="nav button" id="nav_pub" onclick="scroll_to(2)"> Publications </div>
-        <div class="nav button" id="nav_links" onclick="scroll_to(3)"> Links </div>
         <div class="nav button" id="nav_resume"> Resume </div>
     </div>
 </div>
 
 <div class="content_box" id="content_about">
     <div class="content_title">
-        <h2> About Me </h2>
+        <h2> about me </h2>
     </div>
     <div class="content_inner">
-        <div id="spaceship_holder">
-        <img id="spaceship"  src="spaceship.jpg" />
+        <div id="about_holder">
+            <div id="spaceship_holder">
+                <img id="spaceship"  src="spaceship.jpg" />
+            </div>
         </div>
             <p> I am currently an employee and master's student at Penn's
             <a href="seas.upenn.edu/~netdb">netdb</a> and
@@ -59,7 +60,7 @@
 
 <div class="content_box" id="content_projects">
     <div class="content_title">
-        <h2 onclick="unshow_other_proj('')"> Personal Projects </h2>
+        <h2 onclick="unshow_other_proj('')"> personal projects </h2>
     </div>
     <div id="proj_sidebar">
         <div class="proj_icon_container">
@@ -172,13 +173,7 @@
 
 <div class="content_box" id="content_pubs">
     <div class="content_title">
-        <h2> Publications </h2>
-    </div>
-</div>
-
-<div class="content_box" id="content_links">
-    <div class="content_title">
-        <h2> Clickable Text </h2>
+        <h2> publications </h2>
     </div>
 </div>
 
