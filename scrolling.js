@@ -8,7 +8,6 @@ var boxes = [
     //'#content_memo',
     //'#content_art',
     '#content_pubs',
-    '#content_links',
 ];
 
 var projects_start = boxes.indexOf('#content_projects');
@@ -86,7 +85,9 @@ var scroll_to = function(box_i, noclose) {
     if (!noclose && hamburger_on && !permanent_sidebar()) {
         toggle_hamburger();
     }
-    $('body').scrollTo((box_i / boxes.length * $('body').height()), {duration: 1000});
+    var minus = -.25*$(window).height() - $('#content_projects').height()
+    minus = Math.min(minus, 0)
+    $('body').scrollTo((box_i / boxes.length * ($('body').height() + minus)), {duration: 1000});
 }
 
 var set_box_pos = function(box_i, box) {
@@ -95,7 +96,11 @@ var set_box_pos = function(box_i, box) {
     //var min_box_pos = (box_i) / boxes.length;// * PAGE_PER_I;
 
     var box_id = box.attr('id');
-    var x = 200 - 200  / ( 1 + Math.exp( - 50 * (pct - box_pct)));
+
+    var xmax = 200
+
+    console.log('xmax', xmax)
+    var x = 200 - xmax / ( 1 + Math.exp( - 25* (pct - box_pct)));
     console.log(box, x)
     if (box_id in box_links) {
         links = box_links[box_id];
@@ -104,7 +109,18 @@ var set_box_pos = function(box_i, box) {
         }
     }
 
-    box.css("top", `calc(50px + ${x}vh)`)
+
+    if (box.height() - $(window).height() > 0 && x < .2 && box_i == 2) {
+        y = 50 - 1/x;
+        console.log('wh', y,$(window).height(), box.height())
+        if (y < ($(window).height() - box.height())) {
+            y = - (box.height() - $(window).height());
+        }
+    } else {
+        y = 50;
+    }
+
+    box.css("top", `calc(${y}px + ${x}vh)`)
     box.css("z-index", box_i);
     return x;
 }
