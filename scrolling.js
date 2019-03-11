@@ -111,10 +111,10 @@ var set_box_pos = function(box_i, box) {
 
 
     if (box.height() - $(window).height() > 0 && x < .2 && box_i == 2) {
-        y = 50 - 1/x;
+        y = 50 - .5/x;
         console.log('wh', y,$(window).height(), box.height())
-        if (y < ($(window).height() - box.height())) {
-            y = - (box.height() - $(window).height());
+        if (y < ($(window).height() - box.height() + 50)) {
+            y = - (box.height() - $(window).height() - 50);
         }
     } else {
         y = 50;
