@@ -37,7 +37,7 @@ var project_icons = {
 };
 
 var permanent_sidebar = function() {
-    return screen.width > 800;
+    return screen.width > 900;
 }
 
 var toggle_hamburger = function() {
