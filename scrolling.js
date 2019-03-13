@@ -109,15 +109,22 @@ var set_box_pos = function(box_i, box) {
         }
     }
 
+    var y = 50;
 
     if (box.height() - $(window).height() > 0 && x < .2 && box_i == 2) {
-        y = 50 - .5/x;
-        console.log('wh', y,$(window).height(), box.height())
-        if (y < ($(window).height() - box.height() + 50)) {
-            y = - (box.height() - $(window).height() - 50);
-        }
-    } else {
-        y = 50;
+
+        var min_y = (Math.log((xmax/(200-.2)) - 1) / -25 + box_pct) * $('body').height();
+        var max_offset = min_y - ($('body').height() - $(window).height());
+
+        var offset = min_y - window.pageYOffset;
+
+        y = 50 + ( - (box.height() - $(window).height() )) * offset / max_offset;
+
+        //y = 50 - .5/x;
+        //console.log('wh', y,$(window).height(), box.height())
+        //if (y < ($(window).height() - box.height() + 50)) {
+        //    y = - (box.height() - $(window).height() - 50);
+        //}
     }
 
     box.css("top", `calc(${y}px + ${x}vh)`)
