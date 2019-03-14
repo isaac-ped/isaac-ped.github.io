@@ -15,7 +15,7 @@ div.nav {
     border:0px;
     width: 40px;
     height: 40px;
-    background-color: black;
+    background-color: #111111;
     background-image:url("hamburger.png");
     background-size:cover;
     z-index: 20;
@@ -29,7 +29,7 @@ div.nav {
     width: 160px;
 }
 #nav_box {
-    background-color:black;
+    background-color:#111111;
     position: fixed;
     right: -10em;
     margin: 5px;
@@ -130,7 +130,7 @@ a:visited {
 #button_group {
     padding: 0;
     top: -20px;
-    background-color:black;
+    background-color:#111111;
     padding-top:5px;
     right: 0;
     height: 100vh;
