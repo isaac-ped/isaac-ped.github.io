@@ -237,6 +237,7 @@ a:visited {
     white-space: nowrap;
     width: 8vh;
     height: 8vh;
+    max-height: calc(15vh - 30px);
     border-style:dotted;
     border-width: 1px;
     border-color:white;
@@ -244,8 +245,14 @@ a:visited {
     display: inline-block;
     vertical-align:middle;
     margin-right: 10px;
-
+    cursor:pointer;
 }
+
+.proj_icon_box img {
+    max-width: calc(15vh - 32px);
+    max-height: calc(15vh - 32px);
+}
+
 
 .proj_icon_helper {
     height: 100%;
@@ -254,9 +261,9 @@ a:visited {
 }
 .proj_icon_container {
     height: 8vh;
+    max-height: calc(15vh - 30px);
     width: 80vw;
     margin-top: 10px;
-    cursor:pointer;
 }
 
 .proj_icon_text {
@@ -264,6 +271,7 @@ a:visited {
     width: calc(80vw - 10vh);
     left: 10vh;
     top: -6vh;
+    cursor: pointer;
 }
 .proj_icon_text p {
     font-size: 13px;
