@@ -121,6 +121,12 @@ a:visited {
     text-align: center;
     line-height: 25px;
     font-family: 'Quicksand', sans-serif;
+    cursor:pointer;
+}
+
+.nav .button a {
+    color:white;
+    text-decoration:none;
 }
 
 .nav .button:hover {
