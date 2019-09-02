@@ -100,7 +100,7 @@ var set_box_pos = function(box_i, box) {
     if (box_id in box_links) {
         links = box_links[box_id];
         for (var i=0; i < links.length; i++) {
-            $(`#${links[i]}`).css('margin-top', `calc(95px + ${x}vh)`)
+            $(`#${links[i]}`).css('margin-top', `calc(100px + ${x}vh)`)
         }
     }
 
