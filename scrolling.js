@@ -3,16 +3,11 @@ var PAGE_PER_I = 800;
 var boxes = [
     '#content_about',
     '#content_projects',
-    //'#content_set',
-    //'#content_hopfield',
-    //'#content_memo',
-    //'#content_art',
     '#content_pubs',
 ];
 
 var projects_start = boxes.indexOf('#content_projects');
 var projects_end = boxes.indexOf('#content_pubs');
-
 
 var projects = [
     'content_shre',
@@ -20,7 +15,8 @@ var projects = [
     'content_hopfield',
     'content_bagel',
     'content_memo',
-    'content_art'
+    'content_art',
+    'content_sl'
 ];
 
 var box_links = {
@@ -33,7 +29,8 @@ var project_icons = {
     'content_bagel': 'bagel_icon_box',
     'content_hopfield': 'hop_icon_box',
     'content_memo': 'memo_icon_box',
-    'content_art': 'art_icon_box'
+    'content_art': 'art_icon_box',
+    'content_sl': 'sl_icon_box'
 };
 
 var permanent_sidebar = function() {
@@ -70,7 +67,7 @@ var unshow_other_proj = function(proj_name) {
 var show_proj = function(proj_name) {
     for (var i=0; i < projects.length; i++)  {
         if (projects[i] == proj_name) {
-            $('#'+projects[i]).css('z-index', 1.1);
+            $('#'+projects[i]).css('z-index', 2);
             $('#'+projects[i]).fadeIn(200, function() { unshow_other_proj(proj_name);});
             $('#' + project_icons[projects[i]]).css('border-right-style', 'none');
         } else {
@@ -99,9 +96,7 @@ var set_box_pos = function(box_i, box) {
 
     var xmax = 200
 
-    console.log('xmax', xmax)
     var x = 200 - xmax / ( 1 + Math.exp( - 25* (pct - box_pct)));
-    console.log(box, x)
     if (box_id in box_links) {
         links = box_links[box_id];
         for (var i=0; i < links.length; i++) {
@@ -120,11 +115,6 @@ var set_box_pos = function(box_i, box) {
 
         y = 50 + ( - (box.height() - $(window).height() )) * offset / max_offset;
 
-        //y = 50 - .5/x;
-        //console.log('wh', y,$(window).height(), box.height())
-        //if (y < ($(window).height() - box.height() + 50)) {
-        //    y = - (box.height() - $(window).height() - 50);
-        //}
     }
 
     box.css("top", `calc(${y}px + ${x}vh)`)
@@ -138,7 +128,6 @@ var active_pos = function() {
     for (var i=boxes.length - 1; i >= 0; i--) { 
         var min_box_pos = i * PAGE_PER_I - 1000;
         if (( 1 + Math.exp( - 1 * (page_y - min_box_pos))) < 1.01) {
-            console.log(boxes[i], 'is active');
             return i;
         }
     }
