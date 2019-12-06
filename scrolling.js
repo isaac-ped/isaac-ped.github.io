@@ -12,6 +12,7 @@ var projects_end = boxes.indexOf('#content_pubs');
 var projects = [
     'content_shre',
     'content_set',
+    'content_iterm',
     'content_hopfield',
     'content_bagel',
     'content_memo',
@@ -26,6 +27,7 @@ var box_links = {
 var project_icons = {
     'content_shre': 'shre_icon_box',
     'content_set': 'set_icon_box',
+    'content_iterm' : 'iterm_icon_box',
     'content_bagel': 'bagel_icon_box',
     'content_hopfield': 'hop_icon_box',
     'content_memo': 'memo_icon_box',
