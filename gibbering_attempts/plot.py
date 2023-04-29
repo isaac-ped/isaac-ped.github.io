@@ -9,7 +9,7 @@ keys = {
     "nq": "No quest",
     "fq": "Frost Quest",
     "c": "Caverns of Frost",
-    "ch": "Chiltra",
+    "ch": "Chiltara",
     "nch": "No Chiltara",
     "g": "Gemstone!",
 }
