@@ -62,6 +62,26 @@
         <h2 onclick="unshow_other_proj('')" style="cursor:pointer"> personal projects </h2>
     </div>
     <div id="proj_sidebar">
+        <div class="proj_icon_container" onclick="show_proj('content_dad')">
+            <div class="proj_icon_box" id="dad_icon_box">
+                <span class="proj_icon_helper"> </span>
+                <img src="dad.png" class="proj_icon" id="dad_icon" />
+            </div>
+            <div class="proj_icon_text">
+                <p style="display:inline">Andy.Pedisich - In Memorium</p>
+            </div>
+        </div>
+
+        <div class="proj_icon_container" onclick="show_proj('content_af')">
+            <div class="proj_icon_box" id="af_icon_box">
+                <span class="proj_icon_helper"> </span>
+                <img src="af-icon.png" class="proj_icon" id="af_icon" />
+            </div>
+            <div class="proj_icon_text">
+                <p style="display:inline">Article Friend</p>
+            </div>
+        </div>
+
         <div class="proj_icon_container" onclick="show_proj('content_sl')">
             <div class="proj_icon_box" id="sl_icon_box">
                 <span class="proj_icon_helper"> </span>
@@ -112,7 +132,7 @@
         </div>
         </div>
 
-        <div class="proj_icon_container" onclick="show_proj('content_bagel')" >
+        <!-- <div class="proj_icon_container" onclick="show_proj('content_bagel')" >
         <div class="proj_icon_box" id="bagel_icon_box">
             <span class="proj_icon_helper"> </span>
             <img src="react_bagel_small.png" class="proj_icon" id="bagel_icon" />
@@ -120,7 +140,7 @@
         <div class="proj_icon_text">
             <p style="display:inline">Bagel: A word game for fun and profit!</p>
         </div>
-        </div>
+        </div> -->
 
         <div class="proj_icon_container" onclick="show_proj('content_set')" >
         <div class="proj_icon_box" id="set_icon_box">
@@ -142,6 +162,30 @@
             <p style="display:inline">Art/Other</p>
         </div>
         </div>
+    </div>
+</div>
+
+<div class="content_box project_contents" id="content_dad">
+    <h3> <a href="https://andy.pedisich.com"> Andy.Pedisich </a></h3>
+    <p> A memorial website for my father
+    <p> 
+    <p> My dad passed away of Alzheimer's Disease in 2025.
+        I made this website as a way to tell the story of his life
+        and to showcase his artwork.
+    <div class="proj_pic_holder"> 
+        <a href="https://andy.pedisich.com"><img src="dad-art.png"></a>
+    </div>
+</div>
+
+
+<div class="content_box project_contents" id="content_af">
+    <h3> <a href="https://www.article-friend.com"> Article Friend </a></h3>
+    <p> A tool for generating aphasia-friendly versions of scientific abstracts! 
+    <p> 
+    <p> Take a look at <a href="af-poster.pdf">the poster</a> we recently presented at the Society for the
+        Neurobiology of language for more information!
+    <div class="proj_pic_holder"> 
+        <a href="https://andy.pedisich.com"><img src="af-large.png"></a>
     </div>
 </div>
 
@@ -208,7 +252,7 @@
 </div>
 </div>
 
-<div class="content_box project_contents" id="content_bagel">
+<!-- <div class="content_box project_contents" id="content_bagel">
     <h3> <a href="https://isaac-ped.github.io/play-bagel-react"> Bagel </a></h3>
     <p> Bagel is a two player word-guessing game in the style of
     <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)"> Mastermind </a></p>
@@ -218,7 +262,7 @@
         <img src="react_bagel_large.png">
         </a>
     </div>
-</div>
+</div> -->
 
 <div class="content_box project_contents" id="content_memo">
     <h3> <a href="https://github.com/isaac-ped/Memoizer"> Memoizer </a></h3>
@@ -236,7 +280,8 @@
 <div class="content_box project_contents" id="content_art">
     <h3> Art </h3>
     <p> Among some other small 3D printing projects,
-    I performed a reconstruction of the brains of my girlfriend and myself,
+    I performed a reconstruction of both my brain and my wifes brain.
+    They were used as cake toppers at our wedding and are
     now proudly displayed on our mantle:<br/>
 
     <div class="proj_pic_holder">

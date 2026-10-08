@@ -235,8 +235,8 @@ a:visited {
 .proj_icon_box {
     position: relative;
     white-space: nowrap;
-    width: 8vh;
-    height: 8vh;
+    width: 7vh;
+    height: 7vh;
     max-height: calc(15vh - 30px);
     border-style:dotted;
     border-width: 1px;
@@ -260,7 +260,7 @@ a:visited {
     vertical-align: middle;
 }
 .proj_icon_container {
-    height: 8vh;
+    height: 7vh;
     max-height: calc(15vh - 30px);
     width: 80vw;
     margin-top: 10px;

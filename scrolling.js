@@ -10,6 +10,8 @@ var projects_start = boxes.indexOf('#content_projects');
 var projects_end = boxes.indexOf('#content_pubs');
 
 var projects = [
+    'content_dad',
+    'content_af',
     'content_shre',
     'content_set',
     'content_iterm',
@@ -25,7 +27,9 @@ var box_links = {
 };
 
 var project_icons = {
+    'content_dad': 'dad_icon_box',
     'content_shre': 'shre_icon_box',
+    'content_af': 'af_icon_box',
     'content_set': 'set_icon_box',
     'content_iterm' : 'iterm_icon_box',
     'content_bagel': 'bagel_icon_box',
